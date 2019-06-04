@@ -1,0 +1,13 @@
+#mainNavbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.active {
+  background-color: dodgerblue;
+}
+
+.routes {
+  display: flex;
+  justify-content: center;
+}
