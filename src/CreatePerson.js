@@ -10,6 +10,7 @@ class CreatePerson extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   onChange(ev) {
+    // Perfect, though this could be [ev.target.name]: ev.target.value and then you could use it for other form inputs.  For a single input, this works though!
     this.setState({ newPerson: ev.target.value });
   }
 

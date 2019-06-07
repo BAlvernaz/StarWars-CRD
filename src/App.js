@@ -21,10 +21,11 @@ class App extends Component {
   }
 
   onDelete(idx) {
+    // Good use of _ to indicate something that is not used outside the callback!
     const people = this.state.people.filter((person, _idx) => _idx !== idx);
     this.setState({ people });
   }
-
+  // Like the name for this method!
   async grabPeople() {
     const repson = await axios.get(
       "https://profs-star-wars.herokuapp.com/people"
@@ -34,6 +35,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
+    // Great work the way you're updating state.
     const repson = await axios.get(
       "https://profs-star-wars.herokuapp.com/people"
     );
@@ -48,9 +50,11 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
+          {/* Nice work breaking out your navbar into another component */}
           <Navbar people={people}/>
           <div className='routes'>
             <Route exact path="/" component={Home} />
+            {/* Good passing down the methods */}
             <Route
               path="/people"
               render={() => <People people={people} onDelete={onDelete} />}
